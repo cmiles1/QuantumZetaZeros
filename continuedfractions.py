@@ -14,7 +14,7 @@ def CF_encode(x,maxIt):
             x = 1/y
         except ZeroDivisionError:
             return cf
-        print(y,x,(x//1))
+        #print(y,x,(x//1))
         It += 1
     return cf
 
@@ -27,7 +27,7 @@ def CF_decode(cf):
     for a in cf:
         h = a*h1+h2
         k = a*k1+k2
-        print([a,h,k,h/k])
+        #print([a,h,k,h/k])
         try:
             hk = h/k
         except ZeroDivisionError:
