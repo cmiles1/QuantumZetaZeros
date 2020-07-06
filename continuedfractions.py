@@ -18,7 +18,7 @@ def CF_encode(x,maxIt):
         It += 1
     return cf
 
-# Or, takes a CF and converts it to a fraction (best representing)
+# Or, takes a CF and converts it to a fraction (approximately) representing
 # An integer, and the decimal value of the fraction
 
 def CF_decode(cf):
