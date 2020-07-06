@@ -6,7 +6,7 @@ This is my first repository, meant for studying the Riemann Hypothesis and the l
 ## Files
 
 ### continuedfractions.py
-Converts a float, (and a max iteration) and turns it into a CF.\
+Converts a float, (and takes a max iteration amount) and turns it into a CF.\
 Converts a CF into an float
 
 ####  CF_encode(x,maxIt)
