@@ -3,6 +3,7 @@
 This is my first repository, meant for studying the Riemann Hypothesis and the link between the zeta function's zeros and the spacing of prime numbers.
 ## Index
 1) Continuedfractions.py
+2) ZetaGCFGen
 ## Files
 
 ### continuedfractions.py
