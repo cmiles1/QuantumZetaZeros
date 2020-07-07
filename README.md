@@ -16,7 +16,7 @@ Returns a list best representing the continued fraction of x
 
 ####  CF_decode(cf)
 Where 'cf' is the continued fraction in the form of a list\
-Returns a touple of :
+Returns a list of :
 
 0) the numerator of the best-fitting "h" values
 1) the denominator of the best-fitting "k" values
