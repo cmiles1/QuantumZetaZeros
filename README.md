@@ -37,8 +37,7 @@ Returns a list of :
 ```
 ### zetafunc.py
 Computes the Zeta function, in terms of Eta, for a real/complex number. Whereas the real component of s > 0 and not equal to one.\
-Note: The complex component of 's' is written in the form 'a+bj'. \
-'J' is the Pythonic form of 'i', used to denote an imaginary number.
+Note: The complex component of 's' is written in the form 'a+bj'. Where 'J' is the Pythonic form of 'i', used to denote an imaginary number.
 
 #### eta(s, t=100000)
 Computes the Eta function (the alternating Zeta function) for a real or complex number ('s') greater than 0 and not equal to one.\
