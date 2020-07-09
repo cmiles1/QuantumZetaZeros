@@ -24,3 +24,4 @@ def zeta(s,t=100000):
         return float("inf")
     else:
         return eta(s)/ (2**(1-s)-1)
+    return eta(s,t)/ (2**(1-s)-1)
