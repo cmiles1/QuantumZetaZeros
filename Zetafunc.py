@@ -20,7 +20,7 @@ def eta(s,t=100000):
 
 # Calculates Zeta(s) in terms of Eta(s)
 def zeta(s,t=100000):
-    return eta(s)/ (2**(1-s)-1)
+    return eta(s,t)/ (2**(1-s)-1)
 
 
 
