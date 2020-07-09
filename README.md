@@ -1,6 +1,6 @@
 # Quantum Zeta Zeros
 
-This is my first repository, meant for studying the Riemann Hypothesis and the link between the zeta function's zeros and the spacing of prime numbers.
+This is my first repository, meant for collaborating on the study of the Riemann Zeta Zeros and their possible, theoretical relationships.
 ## Index
 1) Continuedfractions.py
 2) Zetafunc.py
