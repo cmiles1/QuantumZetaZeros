@@ -3,11 +3,12 @@
 This is my first repository, meant for studying the Riemann Hypothesis and the link between the zeta function's zeros and the spacing of prime numbers.
 ## Index
 1) Continuedfractions.py
+2) ZetaGCFGen
 ## Files
 
 ### continuedfractions.py
-Converts a float, (and takes a max iteration amount) and turns it into a CF.\
-Converts a CF into an float
+Converts a float, (and takes on a max iteration amount for precision) into a CF. with ```CF_encode(x,maxIt)``` \
+Converts a CF into an float with ```CF_decode(cf)```
 
 ####  CF_encode(x,maxIt)
 Where float 'x' is the real number to encode, and integer 'maxIt' is the maximum iterations (accuracy, maximum length) of the standard continued fraction.\
@@ -15,10 +16,11 @@ Returns a list best representing the continued fraction of x
 
 ####  CF_decode(cf)
 Where 'cf' is the continued fraction in the form of a list\
-Returns a touple of :\
-0) the numerator of the best-fitting "h" values\
-1) the denominator of the best-fitting "k" values\
-2) the integer form of the fraction\
+Returns a list of :
+
+0) the numerator of the best-fitting "h" values
+1) the denominator of the best-fitting "k" values
+2) the integer form of the fraction
 
 #### Examples:
 ```
