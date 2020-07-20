@@ -21,8 +21,8 @@ def CreateSfxArr(r):
     return occ
 
 # Get the longest recurring substring in the string
-def LRSS(a):
-    sfxar = CreateSfxArr(a)
+def LRSS(z):
+    sfxar = CreateSfxArr(z)
     # Strip any substrings with only 1 occurence
     filtered = [k for k,v in sfxar.items() if v >= 2]
     # Make sure there is at least one substring with more than 1 occurence
@@ -41,7 +41,7 @@ def LRSS(a):
 
 # Get all the LRSS' for each item in the list of Zeros, for the first x terms
 # With the list of Zeta Zeros, a number ~= 550 effectively ran out of memory
-def get_all_LRSS(cflist,x):
+def get_all_LRSS(cflist,x=-1):
     out = []
     for cf in cflist:
         out.append(LRSS(str(cf[:x])))
