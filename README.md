@@ -178,9 +178,9 @@ Returns a list of the LRSS (prior to the 'x'th term), for each list.
 #### Examples:
 Find the longest recurring subsequence of the first 500 terms of each zeta zero's continued fraction.
 ```
->>> LRSS_30t = get_all_LRSS(Zeros_CF,500)
+>>> LRSS_500t = get_all_LRSS(Zeros_CF,500)
 >>> n= 0
->>> for i in LRSS_30t:
+>>> for i in LRSS_500t:
      print("Zero #", n, "\n", "LRSS :", i)
      n +=1
 ```
