@@ -1,8 +1,6 @@
 from itertools import islice
-#import math
 
-
-# Zeta.py
+# Zetafunc.py
 # Calculates Zeta function in terms of Eta(s), where Re(s) > 0, Re(s) != 1
 
 def count(firstval=0, step=1):
@@ -24,4 +22,3 @@ def zeta(s,t=100000):
         return float("inf")
     else:
         return eta(s)/ (2**(1-s)-1)
-    return eta(s,t)/ (2**(1-s)-1)

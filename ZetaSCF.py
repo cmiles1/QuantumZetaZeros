@@ -2,7 +2,7 @@ from mpmath import *
 import re
 
 # Sets precision for mpmath objects
-mp.dps = 1025
+mp.dps = 1026
 
 
 # Opens file of Zeta Zeros, formats each Zero, returns list of mp.mpf objects (floats)
@@ -68,32 +68,17 @@ def CF_decode(cf):
 # Return HK values of CF_decode
 Zeros_HK = list((CF_decode(i) for i in Zeros_CF))
 
-# CF Rounding (Error Removing) Utility
-# Compares the number of accurate digits in original zero to the returned HK value of the standard CF
-# Remove the last number of terms in the CF, for each inaccurate digit between the Zero and the HK
 
-# Note: this function does not get a more accurate value for the CF,
-# The function is for accurate pattern-detection in the string of each CF
-def RoundZerosCF(ZetaZeros, Zeros_HK):
+# Returns a list of the deltas for each item in two closely-related lists of floats (or mpmath float objects)
+def delta(a,b):
     n = 0
-    Rnd_CF = []
-    for i in ZetaZeros:
-        # Check that each zero is equal to the decoded CF of the Zero
-        if i != Zeros_HK[n]:
-            #print(str(i).split(".")[0])
-            # If the two items are not equal, count the 'k' number of digits backward
-            for k in range(1, len(str(ZetaZeros[n]))-1):
-                # If everything before the 'k'th last item is equal in both lists, remove the last "k" items from the CF
-                if str(i)[:-k] == str(Zeros_HK[n])[:-k]:
-                    Rnd_CF.append(Zeros_CF[n][:-k])
-                    break
-                # Or, if everything before 'k' is equal to everything before 1+k (from the last digit) in the returned HK value
-                elif str(i)[:-k] == str(Zeros_HK[n])[:-k-1]:
-                    Rnd_CF.append(Zeros_CF[n][:-k-1])
-                    break
-        else:
-            Rnd_CF.append(Zeros_CF[n])
+    deltas = []
+    for i in a:
+        d = (i-b[n])/(i*100)
+        deltas.append(d)
         n+=1
-    return Rnd_CF
+    return deltas
 
-Rnd_CF = RoundZerosCF(ZetaZeros, Zeros_HK)
+deltas_HK = delta(ZetaZeros, Zeros_HK)
+
+
