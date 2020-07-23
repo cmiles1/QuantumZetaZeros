@@ -1,5 +1,4 @@
 # Quantum Zeta Zeros
-
 This is my first repository, meant for collaborating on the study of the Riemann Zeta Zeros and their theoretical relationships.
 ## Index
 1. Dependencies
@@ -9,7 +8,7 @@ This is my first repository, meant for collaborating on the study of the Riemann
    - ZetaSCF.py
    - LRSS.py
 
-
+<br></br>
 
 ## Dependencies
 List of every imported module (and what was used from each) in the repo:
@@ -18,9 +17,10 @@ List of every imported module (and what was used from each) in the repo:
 3) re  (findall)
 4) itertools  (islice)
 
-
+<br></br>
 
 ## Files
+
 
 
 ### Continuedfractions.py
@@ -52,7 +52,7 @@ Returns a list of :
   >>> CF_decode(CF_encode(4.44564,12))
   [4684937111563, 1053827370539, 4.44564]
 ```
-
+<br></br>
 
 ### Zetafunc.py
 Computes the Zeta function, in terms of Eta, for a real/complex number. Whereas the real component of s > 0 and not equal to one.\
@@ -86,7 +86,7 @@ Returns the Zeta of 's'.
   >>> print(abs(zeta(.5+21.022039638771554992628479593896902777334340524902781754629520403587j))) # Calculates the second known Zeta Zero
   0.0007724462154547514
 ```
-
+<br></br>
 
 ### ZetaSCF.py
 Computes the best standard continued fraction from a provided list of re-formatted Zeta Zeros, out to 1024 digits. \(`Zeta_Zeros_1024.txt`)\
@@ -149,7 +149,7 @@ Get the Delta of the `Zeros_HK` list ('b'), compared to the `ZetaZeros` list ('a
 ```
 >>> delta(ZetaZeros, Zeros_HK)
 ```
-
+<br></br>
 
 ### LRSS.py
 Finds Longest Recurring Subsequence terms inside a list \
