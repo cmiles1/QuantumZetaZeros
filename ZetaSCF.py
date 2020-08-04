@@ -1,10 +1,6 @@
 from mpmath import *
 import re
 
-# Sets precision for mpmath objects
-mp.dps = 1026
-
-
 # Opens file of Zeta Zeros, formats each Zero, returns list of mp.mpf objects (floats)
 def parsefile(file_name):
     output = []
@@ -40,13 +36,10 @@ def zeta_scf(s, t=30):
         It += 1
     return cf
 
-        
-# Returns list of mp floats from a given text file in the same directory
-ZetaZeros = parsefile("ZetaZeros_1024.txt")
-
 
 # Computes the SCF for all provided Zeta Zeros up to the amount of characters in each Zero:
 Zeros_CF = list((zeta_scf(i,len(str(i))) for i in ZetaZeros))
+
 
 # Decode a standard continued fraction
 # (with mpmath float objects*)
@@ -65,9 +58,6 @@ def CF_decode(cf):
         h1,k1 = h,k
     return h/k
 
-# Return HK values of CF_decode
-Zeros_HK = list((CF_decode(i) for i in Zeros_CF))
-
 
 # Returns a list of the deltas for each item in two closely-related lists of floats (or mpmath float objects)
 def delta(a,b):
@@ -79,6 +69,22 @@ def delta(a,b):
         n+=1
     return deltas
 
-deltas_HK = delta(ZetaZeros, Zeros_HK)
 
 
+if __name__ == "__main__":
+    # Set decimal precision, get list of Zeta Zeros
+    d = int(input("9 or 1024 dps?\n> "))
+        
+    if d == 9:
+        mp.dps = 12
+    elif d == 1024:
+        mp.d = 1026
+
+    ZetaZeros = parsefile("ZetaZeros_"+d+".txt")
+    
+    # Computes the SCF for all provided Zeta Zeros up to the amount of characters in each Zero:
+    Zeros_CF = list((zeta_scf(i,len(str(i))) for i in ZetaZeros))
+    # Return the HK values of CF_decode for the zeros
+    Zeros_HK = list((CF_decode(i) for i in Zeros_CF))
+    # Return the delta between the original values and HK values
+    deltas_HK = delta(ZetaZeros, Zeros_HK)
